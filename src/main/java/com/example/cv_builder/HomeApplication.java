@@ -10,10 +10,13 @@ import java.io.IOException;
 public class HomeApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HomeApplication.class.getResource("home-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        FXMLLoader fxmlLoader = new FXMLLoader(HomeApplication.class.getResource("home.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 900, 700);
+        stage.setTitle("CV BuildeR!");
         stage.setScene(scene);
         stage.show();
+    }
+    public static void main(String[] args) {
+        launch(args);
     }
 }
