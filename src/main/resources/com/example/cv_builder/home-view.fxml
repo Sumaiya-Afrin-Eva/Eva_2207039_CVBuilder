@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="500.0" prefWidth="401.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cv_builder.HomeController">
+<BorderPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cv_builder.HomeController">
    <bottom>
     <Label alignment="CENTER" contentDisplay="CENTER" text="Select the above 'Create CV' button." textAlignment="CENTER" textFill="#dd0b0b" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -25,26 +25,26 @@
          <children>
             <Label alignment="TOP_CENTER" contentDisplay="CENTER" text="Welcome" textFill="#3d00cd">
                <VBox.margin>
-                  <Insets left="140.0" top="30.0" />
+                  <Insets left="360.0" top="35.0" />
                </VBox.margin>
                <font>
-                  <Font name="Hiragino Sans W8" size="25.0" />
+                  <Font name="Hiragino Sans W8" size="33.0" />
                </font>
             </Label>
             <Label text="to" textFill="#3d00cd">
                <font>
-                  <Font name="AppleMyungjo Regular" size="22.0" />
+                  <Font name="AppleMyungjo Regular" size="36.0" />
                </font>
                <VBox.margin>
-                  <Insets left="194.0" top="5.0" />
+                  <Insets left="435.0" top="5.0" />
                </VBox.margin>
             </Label>
             <Label text="&quot;CV BuildeR&quot;" textFill="#3d00cd">
                <font>
-                  <Font name="Hiragino Sans W8" size="25.0" />
+                  <Font name="Hiragino Sans W8" size="32.0" />
                </font>
                <VBox.margin>
-                  <Insets left="115.0" top="5.0" />
+                  <Insets left="330.0" top="5.0" />
                </VBox.margin>
             </Label>
          </children>
