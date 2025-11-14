@@ -3,12 +3,12 @@
     -fx-background-color: black;
 }
 .label{
-    -fx-font-size: 15px;
+    -fx-font-size: 16px;
     -fx-text-fill: "WHITE";
 }
 .text-field{
     -fx-background-color: "GREY";
-    -fx-font-size: 15px;
+    -fx-font-size: 16px;
     -fx-text-fill: "WHITE";
 }
 #tag{

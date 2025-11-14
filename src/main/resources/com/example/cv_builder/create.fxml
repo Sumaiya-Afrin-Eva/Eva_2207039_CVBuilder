@@ -100,6 +100,6 @@
             <Pane prefHeight="200.0" prefWidth="200.0" />
          </children>
       </VBox>
-      <Button fx:id="generateButton" layoutX="360.0" layoutY="733.0" mnemonicParsing="false" text="Generate CV" />
+      <Button fx:id="generateButton" layoutX="368.0" layoutY="778.0" mnemonicParsing="false" text="Generate CV" />
    </children>
 </AnchorPane>
