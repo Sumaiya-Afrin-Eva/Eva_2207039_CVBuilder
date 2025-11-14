@@ -1,0 +1,30 @@
+.scroll-pane {
+    -fx-background: black;
+    -fx-background-color: black;
+}
+.label{
+    -fx-font-size: 15px;
+    -fx-text-fill: "WHITE";
+}
+.text-field{
+    -fx-background-color: "GREY";
+    -fx-font-size: 15px;
+    -fx-text-fill: "WHITE";
+}
+#tag{
+    -fx-font-size: 25;
+    -fx-font-family: AkayaTelivigala;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-text-fill: "#ee6103";
+}
+#generateButton{
+    -fx-background-color: "#ee6103";
+    -fx-font-size: 20;
+    -fx-text-fill: black;
+    -fx-font-family: "Serif";
+    -fx-padding: 10px 30px 10px 30px;
+    -fx-alignment: center;
+}
+
+
