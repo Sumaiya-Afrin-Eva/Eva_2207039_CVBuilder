@@ -8,7 +8,7 @@ module com.example.cv_builder {
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
-    requires eu.hansolo.tilesfx;
+   //requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
     opens com.example.cv_builder to javafx.fxml;
