@@ -1,0 +1,38 @@
+#welcomeText{
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: "#3d00cd";
+    -fx-alignment: center;
+}
+
+#to{
+    -fx-font-size: 25;
+    -fx-font-weight: bold;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: "#3d00cd";
+    -fx-alignment: center;
+}
+
+#welcomeText2{
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: "#3d00cd";
+    -fx-alignment: center;
+}
+
+#note{
+    -fx-font-size: 22;
+    -fx-font-family: "Arima Koshi";
+    -fx-text-fill: "#dd0b0b";
+    -fx-alignment: center;
+}
+
+#createButton{
+    -fx-font-size: 25;
+    -fx-font-family: "Serif";
+    -fx-text-fill: "#178a1f";
+    -fx-alignment: center;
+}
+

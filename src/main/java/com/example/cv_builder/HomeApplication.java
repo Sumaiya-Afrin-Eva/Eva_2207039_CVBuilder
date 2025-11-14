@@ -12,6 +12,7 @@ public class HomeApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HomeApplication.class.getResource("home-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 900, 700);
+        scene.getStylesheets().add(HomeApplication.class.getResource("home.css").toExternalForm());
         stage.setTitle("CV Builder!");
         stage.setScene(scene);
         stage.show();
