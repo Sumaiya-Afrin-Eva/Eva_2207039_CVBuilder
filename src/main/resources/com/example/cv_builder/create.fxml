@@ -8,98 +8,120 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900" stylesheets="@create.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cv_builder.CreateController">
-   <children>
-      <VBox layoutX="-4.0" layoutY="10.0" prefHeight="700.0" prefWidth="900.0">
-         <children>
-            <Label fx:id="tag" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="902.0" text="Provide Your Information with CV Builder">
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </Label>
-            <Label prefHeight="17.0" prefWidth="593.0" text="Full Name:">
-               <VBox.margin>
-                  <Insets bottom="2.0" left="20.0" top="20.0" />
-               </VBox.margin>
-            </Label>
-            <TextField prefHeight="26.0" prefWidth="594.0">
-               <VBox.margin>
-                  <Insets left="20.0" right="400.0" />
-               </VBox.margin>
-            </TextField>
-            <Label prefHeight="17.0" prefWidth="590.0" text="Email Address:">
-               <VBox.margin>
-                  <Insets bottom="2.0" left="20.0" top="30.0" />
-               </VBox.margin>
-            </Label>
-            <TextField prefHeight="26.0" prefWidth="288.0">
-               <VBox.margin>
-                  <Insets left="20.0" right="400.0" />
-               </VBox.margin>
-            </TextField>
-            <Label prefHeight="17.0" prefWidth="598.0" text="Mobile Number:">
-               <VBox.margin>
-                  <Insets bottom="2.0" left="20.0" top="30.0" />
-               </VBox.margin>
-            </Label>
-            <TextField prefHeight="26.0" prefWidth="284.0">
-               <VBox.margin>
-                  <Insets left="20.0" right="400.0" />
-               </VBox.margin>
-            </TextField>
-            <Label prefHeight="17.0" prefWidth="590.0" text="Address:">
-               <VBox.margin>
-                  <Insets bottom="2.0" left="20.0" top="30.0" />
-               </VBox.margin>
-            </Label>
-            <TextField prefHeight="26.0" prefWidth="286.0">
-               <VBox.margin>
-                  <Insets left="20.0" right="400.0" />
-               </VBox.margin>
-            </TextField>
-            <Label prefHeight="17.0" prefWidth="587.0" text="Educational Qualifications:">
-               <VBox.margin>
-                  <Insets bottom="2.0" left="20.0" top="30.0" />
-               </VBox.margin>
-            </Label>
-            <TextField prefHeight="26.0" prefWidth="284.0">
-               <VBox.margin>
-                  <Insets left="20.0" right="400.0" />
-               </VBox.margin>
-            </TextField>
-            <Label prefHeight="17.0" prefWidth="598.0" text="Projects:">
-               <VBox.margin>
-                  <Insets bottom="2.0" left="20.0" top="30.0" />
-               </VBox.margin>
-            </Label>
-            <TextField prefHeight="26.0" prefWidth="283.0">
-               <VBox.margin>
-                  <Insets left="20.0" right="400.0" />
-               </VBox.margin>
-            </TextField>
-            <Label prefHeight="17.0" prefWidth="598.0" text="Skills:">
-               <VBox.margin>
-                  <Insets bottom="2.0" left="20.0" top="30.0" />
-               </VBox.margin>
-            </Label>
-            <TextField prefHeight="26.0" prefWidth="281.0">
-               <VBox.margin>
-                  <Insets left="20.0" right="400.0" />
-               </VBox.margin>
-            </TextField>
-            <Label prefHeight="17.0" prefWidth="599.0" text="Work Experience:">
-               <VBox.margin>
-                  <Insets bottom="2.0" left="20.0" top="30.0" />
-               </VBox.margin>
-            </Label>
-            <TextField prefHeight="26.0" prefWidth="280.0">
-               <VBox.margin>
-                  <Insets left="20.0" right="400.0" />
-               </VBox.margin>
-            </TextField>
-            <Pane prefHeight="200.0" prefWidth="200.0" />
-         </children>
-      </VBox>
-      <Button fx:id="generateButton" layoutX="368.0" layoutY="778.0" onAction="#openGenerateCV" text="Generate CV" />
-   </children>
+<AnchorPane prefHeight="700.0" prefWidth="900.0" stylesheets="@create.css"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.cv_builder.CreateController">
+
+    <children>
+        <VBox layoutX="-4.0" layoutY="10.0" prefHeight="700.0" prefWidth="900.0">
+            <children>
+                <Label fx:id="tag" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="902.0" text="Provide Your Information with CV Builder">
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                </Label>
+
+                <Label prefHeight="17.0" prefWidth="593.0" text="Full Name:">
+                    <VBox.margin>
+                        <Insets bottom="2.0" left="20.0" top="20.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="fullNameField" prefHeight="26.0" prefWidth="594.0">
+                    <VBox.margin>
+                        <Insets left="20.0" right="400.0" />
+                    </VBox.margin>
+                </TextField>
+
+                <Label prefHeight="17.0" prefWidth="590.0" text="Email Address:">
+                    <VBox.margin>
+                        <Insets bottom="2.0" left="20.0" top="30.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="emailField" prefHeight="26.0" prefWidth="288.0">
+                    <VBox.margin>
+                        <Insets left="20.0" right="400.0" />
+                    </VBox.margin>
+                </TextField>
+
+                <Label prefHeight="17.0" prefWidth="598.0" text="Mobile Number:">
+                    <VBox.margin>
+                        <Insets bottom="2.0" left="20.0" top="30.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="phoneField" prefHeight="26.0" prefWidth="284.0">
+                    <VBox.margin>
+                        <Insets left="20.0" right="400.0" />
+                    </VBox.margin>
+                </TextField>
+
+                <Label prefHeight="17.0" prefWidth="590.0" text="Address:">
+                    <VBox.margin>
+                        <Insets bottom="2.0" left="20.0" top="30.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="addressField" prefHeight="26.0" prefWidth="286.0">
+                    <VBox.margin>
+                        <Insets left="20.0" right="400.0" />
+                    </VBox.margin>
+                </TextField>
+
+                <Label prefHeight="17.0" prefWidth="587.0" text="Educational Qualifications:">
+                    <VBox.margin>
+                        <Insets bottom="2.0" left="20.0" top="30.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="educationField" prefHeight="26.0" prefWidth="284.0">
+                    <VBox.margin>
+                        <Insets left="20.0" right="400.0" />
+                    </VBox.margin>
+                </TextField>
+
+                <Label prefHeight="17.0" prefWidth="598.0" text="Projects:">
+                    <VBox.margin>
+                        <Insets bottom="2.0" left="20.0" top="30.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="projectsField" prefHeight="26.0" prefWidth="283.0">
+                    <VBox.margin>
+                        <Insets left="20.0" right="400.0" />
+                    </VBox.margin>
+                </TextField>
+
+                <Label prefHeight="17.0" prefWidth="598.0" text="Skills:">
+                    <VBox.margin>
+                        <Insets bottom="2.0" left="20.0" top="30.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="skillsField" prefHeight="26.0" prefWidth="281.0">
+                    <VBox.margin>
+                        <Insets left="20.0" right="400.0" />
+                    </VBox.margin>
+                </TextField>
+
+                <Label prefHeight="17.0" prefWidth="599.0" text="Work Experience:">
+                    <VBox.margin>
+                        <Insets bottom="2.0" left="20.0" top="30.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="experienceField" prefHeight="26.0" prefWidth="280.0">
+                    <VBox.margin>
+                        <Insets left="20.0" right="400.0" />
+                    </VBox.margin>
+                </TextField>
+
+                <!-- Spacer -->
+                <Pane prefHeight="200.0" prefWidth="200.0" />
+
+                <Button fx:id="generateButton"
+                        text="Generate CV"
+                        onAction="#openGenerateCV">
+                    <VBox.margin>
+                        <Insets top="20.0" bottom="20.0" left="20.0" right="400.0"/>
+                    </VBox.margin>
+                </Button>
+
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>
