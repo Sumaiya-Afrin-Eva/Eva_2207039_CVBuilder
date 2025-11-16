@@ -6,21 +6,53 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class CreateController {
 
+    @FXML private TextField fullNameField;
+    @FXML private TextField emailField;
+    @FXML private TextField phoneField;
+    @FXML private TextField addressField;
+    @FXML private TextField educationField;
+    @FXML private TextField projectsField;
+    @FXML private TextField skillsField;
+    @FXML private TextField experienceField;
+
+
     @FXML
     void openGenerateCV(ActionEvent event) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("generate.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("preview.fxml"));
+        Parent root = loader.load();
 
-        Scene scene = new Scene(root, 900, 700);
-        scene.getStylesheets().add(
-                getClass().getResource("generate.css").toExternalForm()
+        // Controller access
+        GenerateController controller = loader.getController();
+
+        controller.setCVData(
+                fullNameField.getText(),
+                " ",
+                emailField.getText(),
+                phoneField.getText(),
+                addressField.getText(),
+                projectsField.getText(),
+                skillsField.getText(),
+                " ",
+                experienceField.getText(),
+                educationField.getText()
         );
 
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        ScrollPane scroll = new ScrollPane();
+        scroll.setContent(root);
+        scroll.setFitToWidth(true);
+        scroll.setFitToHeight(true);
+        scroll.setPannable(true);
+
+        Scene scene = new Scene(scroll, 900, 700);
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
