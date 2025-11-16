@@ -26,13 +26,17 @@ public class GenerateController {
     @FXML private Label experienceLabel;
     @FXML private Label educationLabel;
 
-    // Set CV Data
+    private String formatText(String text) {
+        if (text == null || text.isEmpty()) return "";
+        return text.replaceAll("\\s*,\\s*", "\n");
+    }
+
     public void setCVData(String fullName,
                           String jobTitle,
                           String email,
                           String phone,
                           String address,
-                          String about,
+                          String project,
                           String skills,
                           String languages,
                           String experience,
@@ -43,19 +47,18 @@ public class GenerateController {
 
         emailLabel.setText("Email: " + email);
         phoneLabel.setText("Phone: " + phone);
-        addressLabel.setText("Address: " + address);
+        addressLabel.setText("Address: \n" + formatText(address));
 
-        aboutLabel.setText(about);
-        skillsLabel.setText(skills);
-        languagesLabel.setText(languages);
-
-        experienceLabel.setText(experience);
-        educationLabel.setText(education);
+        aboutLabel.setText(formatText(project));
+        skillsLabel.setText(formatText(skills));
+        languagesLabel.setText(formatText(languages));
+        experienceLabel.setText(formatText(experience));
+        educationLabel.setText(formatText(education));
     }
 
     @FXML
     private void backToHome(ActionEvent event) throws Exception {
-        Parent homeRoot = FXMLLoader.load(getClass().getResource("home.fxml"));
+        Parent homeRoot = FXMLLoader.load(getClass().getResource("home-view.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(homeRoot));
         stage.show();

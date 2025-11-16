@@ -25,10 +25,9 @@ public class CreateController {
     @FXML
     void openGenerateCV(ActionEvent event) throws Exception {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("preview.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("generate.fxml"));
         Parent root = loader.load();
 
-        // Controller access
         GenerateController controller = loader.getController();
 
         controller.setCVData(
@@ -50,10 +49,15 @@ public class CreateController {
         scroll.setFitToHeight(true);
         scroll.setPannable(true);
 
-        Scene scene = new Scene(scroll, 900, 700);
+        //Scene scene = new Scene(scroll, 900, 700);
+        Scene createScene = new Scene(scroll, 900, 700);
+
+        createScene.getStylesheets().add(
+                getClass().getResource("generate.css").toExternalForm());
+
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
+        stage.setScene(createScene);
         stage.show();
     }
 }

@@ -1,15 +1,7 @@
-.cv-root {
-    -fx-padding: 30;
-    -fx-background-color: #f4f4f4;
-}
-
-.cv-header {
-    -fx-alignment: center-left;
-}
-
 .cv-name {
-    -fx-font-size: 28px;
+    -fx-font-size: 35px;
     -fx-font-weight: bold;
+    -fx-text-fill: BLACK;
 }
 
 .cv-title {
@@ -22,17 +14,46 @@
 }
 
 .cv-heading {
-    -fx-font-size: 18px;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: #0059a5;
+    -fx-text-fill: WHITE;
+}
+
+.cv-heading1 {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: BLACK;
 }
 
 .cv-text {
-    -fx-font-size: 14px;
-    -fx-text-fill: #222;
+    -fx-font-size: 17px;
+    -fx-text-fill: WHITE;
+}
+
+.cv-text1 {
+    -fx-font-size: 17px;
+    -fx-text-fill: BLACK;
 }
 
 ScrollPane {
     -fx-background: transparent;
     -fx-padding: 10;
 }
+
+#leftColumn{
+    -fx-background-color: #2F364E;
+}
+
+#rightColumn{
+    -fx-background-color: WHITE;
+}
+
+#backHomeButton{
+    -fx-alignment: center;
+    -fx-font-size: 20px;
+    -fx-font-family: "Times New Roman";
+    -fx-padding: 8px 25px 8px 25px;
+    -fx-text-fill: BLACK;
+    -fx-background-color: RED;
+}
+
