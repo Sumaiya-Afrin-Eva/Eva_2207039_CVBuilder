@@ -7,29 +7,23 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class GenerateController {
 
     @FXML private Label fullNameLabel;
     @FXML private Label jobTitleLabel;
-
     @FXML private Label emailLabel;
     @FXML private Label phoneLabel;
     @FXML private Label addressLabel;
-
     @FXML private Label aboutLabel;
     @FXML private Label skillsLabel;
     @FXML private Label languagesLabel;
-
     @FXML private Label experienceLabel;
     @FXML private Label educationLabel;
-
-    private String formatText(String text) {
-        if (text == null || text.isEmpty()) return "";
-        return text.replaceAll("\\s*,\\s*", "\n");
-    }
+    @FXML private ImageView profileImageView;
 
     public void setCVData(String fullName,
                           String jobTitle,
@@ -40,20 +34,31 @@ public class GenerateController {
                           String skills,
                           String languages,
                           String experience,
-                          String education) {
+                          String education,
+                          String imageUrl) {
 
         fullNameLabel.setText(fullName);
         jobTitleLabel.setText(jobTitle);
 
         emailLabel.setText("Email: " + email);
         phoneLabel.setText("Phone: " + phone);
-        addressLabel.setText("Address: \n" + formatText(address));
+        addressLabel.setText("Address: \n" + address);
 
-        aboutLabel.setText(formatText(project));
-        skillsLabel.setText(formatText(skills));
-        languagesLabel.setText(formatText(languages));
-        experienceLabel.setText(formatText(experience));
-        educationLabel.setText(formatText(education));
+        aboutLabel.setText(project);
+        skillsLabel.setText(skills);
+        languagesLabel.setText(languages);
+        experienceLabel.setText(experience);
+        educationLabel.setText(education);
+
+        if (imageUrl != null && !imageUrl.isEmpty()) {
+            try {
+                Image image = new Image(imageUrl);
+                profileImageView.setImage(image);
+            } catch (Exception e) {
+                System.out.println("Failed to load profile image.");
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML

@@ -28,7 +28,7 @@
 
 ScrollPane {
     -fx-background: transparent;
-    -fx-padding: 10;
+    -fx-padding: 0;
 }
 
 #leftColumn{

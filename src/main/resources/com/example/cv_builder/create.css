@@ -3,13 +3,16 @@
     -fx-background-color: black;
 }
 .label{
-    -fx-font-size: 16px;
+    -fx-font-size: 17px;
     -fx-text-fill: "WHITE";
 }
-.text-field{
-    -fx-background-color: "GREY";
-    -fx-font-size: 16px;
-    -fx-text-fill: "WHITE";
+.text-area .content{
+    -fx-background-color: GREY;
+}
+
+.text-area {
+    -fx-font-size: 17px;
+    -fx-text-fill: WHITE;
 }
 #tag{
     -fx-font-size: 25;
@@ -27,4 +30,11 @@
     -fx-alignment: center;
 }
 
-
+#imageButton {
+    -fx-background-color: "#ee6103";
+    -fx-font-size: 20;
+    -fx-text-fill: black;
+    -fx-font-family: "Serif";
+    -fx-padding: 10px 30px 10px 30px;
+    -fx-alignment: center;
+}
