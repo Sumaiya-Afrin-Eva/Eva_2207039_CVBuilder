@@ -27,6 +27,7 @@ public class HomeController {
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(createScene);
+        stage.setMaximized(true);
         stage.show();
     }
 }

@@ -15,6 +15,7 @@ public class HomeApplication extends Application {
         scene.getStylesheets().add(HomeApplication.class.getResource("home.css").toExternalForm());
         stage.setTitle("CV Builder!");
         stage.setScene(scene);
+        stage.setMaximized(true);
         stage.show();
     }
     public static void main(String[] args) { launch(args);
