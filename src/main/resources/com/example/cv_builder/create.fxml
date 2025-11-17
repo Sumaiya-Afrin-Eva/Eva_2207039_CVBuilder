@@ -66,6 +66,17 @@
                     </VBox.margin>
                 </TextField>
 
+                <Label prefHeight="17.0" prefWidth="593.0" text="Job Title:">
+                    <VBox.margin>
+                        <Insets bottom="2.0" left="20.0" top="30.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="jobTitleField" prefHeight="26.0" prefWidth="594.0">
+                    <VBox.margin>
+                        <Insets left="20.0" right="400.0" />
+                    </VBox.margin>
+                </TextField>
+
                 <Label prefHeight="17.0" prefWidth="587.0" text="Educational Qualifications:">
                     <VBox.margin>
                         <Insets bottom="2.0" left="20.0" top="30.0" />
@@ -99,6 +110,17 @@
                     </VBox.margin>
                 </TextField>
 
+                <Label prefHeight="17.0" prefWidth="598.0" text="Languages:">
+                    <VBox.margin>
+                        <Insets bottom="2.0" left="20.0" top="30.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="languagesField" prefHeight="26.0" prefWidth="281.0">
+                    <VBox.margin>
+                        <Insets left="20.0" right="400.0" />
+                    </VBox.margin>
+                </TextField>
+
                 <Label prefHeight="17.0" prefWidth="599.0" text="Work Experience:">
                     <VBox.margin>
                         <Insets bottom="2.0" left="20.0" top="30.0" />
@@ -110,7 +132,6 @@
                     </VBox.margin>
                 </TextField>
 
-                <!-- Spacer -->
                 <Pane prefHeight="200.0" prefWidth="200.0" />
 
                 <Button fx:id="generateButton"

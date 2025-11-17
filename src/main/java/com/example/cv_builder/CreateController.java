@@ -20,6 +20,8 @@ public class CreateController {
     @FXML private TextField projectsField;
     @FXML private TextField skillsField;
     @FXML private TextField experienceField;
+    @FXML private TextField languagesField;
+    @FXML private TextField jobTitleField;
 
 
     @FXML
@@ -32,13 +34,13 @@ public class CreateController {
 
         controller.setCVData(
                 fullNameField.getText(),
-                " ",
+                jobTitleField.getText(),
                 emailField.getText(),
                 phoneField.getText(),
                 addressField.getText(),
                 projectsField.getText(),
                 skillsField.getText(),
-                " ",
+                languagesField.getText(),
                 experienceField.getText(),
                 educationField.getText()
         );
@@ -49,7 +51,6 @@ public class CreateController {
         scroll.setFitToHeight(true);
         scroll.setPannable(true);
 
-        //Scene scene = new Scene(scroll, 900, 700);
         Scene createScene = new Scene(scroll, 900, 700);
 
         createScene.getStylesheets().add(

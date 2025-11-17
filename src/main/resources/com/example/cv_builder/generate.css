@@ -4,15 +4,6 @@
     -fx-text-fill: BLACK;
 }
 
-.cv-title {
-    -fx-font-size: 16px;
-    -fx-text-fill: #555;
-}
-
-.cv-section {
-    -fx-padding: 10 0 0 0;
-}
-
 .cv-heading {
     -fx-font-size: 20px;
     -fx-font-weight: bold;
@@ -55,5 +46,11 @@ ScrollPane {
     -fx-padding: 8px 25px 8px 25px;
     -fx-text-fill: BLACK;
     -fx-background-color: RED;
+}
+
+.cv-title{
+    -fx-font-size: 23px;
+    -fx-font-weight: bold;
+    -fx-text-fill: BLACK;
 }
 

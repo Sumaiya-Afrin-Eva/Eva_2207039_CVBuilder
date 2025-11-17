@@ -53,16 +53,6 @@
             <VBox.margin>
                <Insets left="30.0" />
             </VBox.margin></Label>
-         <Label>
-            <VBox.margin>
-               <Insets left="30.0" />
-            </VBox.margin>
-         </Label>
-         <Label>
-            <VBox.margin>
-               <Insets left="30.0" />
-            </VBox.margin>
-         </Label>
         </VBox>
 
         <VBox spacing="5">
@@ -72,18 +62,8 @@
             </VBox.margin></Label>
             <Label fx:id="languagesLabel" styleClass="cv-text">
             <VBox.margin>
-               <Insets left="30.0" />
+               <Insets left="15.0" />
             </VBox.margin></Label>
-         <Label>
-            <VBox.margin>
-               <Insets left="30.0" />
-            </VBox.margin>
-         </Label>
-         <Label>
-            <VBox.margin>
-               <Insets left="30.0" />
-            </VBox.margin>
-         </Label>
          <VBox.margin>
             <Insets left="20.0" />
          </VBox.margin>
