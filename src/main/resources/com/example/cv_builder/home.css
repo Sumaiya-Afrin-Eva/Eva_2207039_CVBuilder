@@ -35,4 +35,10 @@
     -fx-text-fill: "#178a1f";
     -fx-alignment: center;
 }
+#savedCVsButton{
+    -fx-font-size: 25;
+    -fx-font-family: "Serif";
+    -fx-text-fill: "#178a1f";
+    -fx-alignment: center;
+}
 

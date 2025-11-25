@@ -1,42 +1,65 @@
-.cv-name {
-    -fx-font-size: 35px;
+.scroll-pane {
+    -fx-background: #cccccc;
+    -fx-padding: 20;
+}
+
+.root-stackpane {
+    -fx-alignment: top-center;
+}
+
+.main-hbox {
+    -fx-background-color: white;
+    /*-fx-padding: 0;*/
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 20, 0, 0, 0);
+    -fx-max-width: 900;
+}
+
+.left-vbox {
+    -fx-background-color: #2f3542;
+    -fx-padding: 30;
+    -fx-pref-width: 300;
+}
+
+.profile-image {
+    -fx-border-radius: 150;
+    -fx-background-radius: 150;
+}
+
+.section-title {
+    -fx-text-fill: white;
+    -fx-font-size: 25;
     -fx-font-weight: bold;
-    -fx-text-fill: BLACK;
 }
 
-.cv-heading {
-    -fx-font-size: 20px;
+.section-label {
+    -fx-font-size: 18;
+    -fx-text-fill: white;
+}
+
+.right-vbox {
+    -fx-padding: 40;
+    -fx-background-color: white;
+    -fx-pref-width: 600;
+    -fx-spacing: 25;
+}
+
+.full-name {
+    -fx-font-size: 32;
     -fx-font-weight: bold;
-    -fx-text-fill: WHITE;
 }
 
-.cv-heading1 {
-    -fx-font-size: 20px;
+.job-title {
+    -fx-font-size: 22;
+    -fx-text-fill: #555;
+}
+
+.section-header {
+    -fx-font-size: 25;
     -fx-font-weight: bold;
-    -fx-text-fill: BLACK;
 }
 
-.cv-text {
-    -fx-font-size: 17px;
-    -fx-text-fill: WHITE;
-}
-
-.cv-text1 {
-    -fx-font-size: 17px;
-    -fx-text-fill: BLACK;
-}
-
-ScrollPane {
-    -fx-background: transparent;
-    -fx-padding: 0;
-}
-
-#leftColumn{
-    -fx-background-color: #2F364E;
-}
-
-#rightColumn{
-    -fx-background-color: WHITE;
+.section-content {
+    -fx-font-size: 18;
 }
 
 #backHomeButton{
@@ -47,10 +70,11 @@ ScrollPane {
     -fx-text-fill: BLACK;
     -fx-background-color: RED;
 }
-
-.cv-title{
-    -fx-font-size: 23px;
-    -fx-font-weight: bold;
+.button-box{
+    -fx-alignment: center;
+    -fx-font-size: 20px;
+    -fx-font-family: "Times New Roman";
+    -fx-padding: 8px 25px 8px 25px;
     -fx-text-fill: BLACK;
+    -fx-background-color: RED;
 }
-

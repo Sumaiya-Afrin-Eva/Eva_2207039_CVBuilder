@@ -1,3 +1,4 @@
+// ...existing code...
 package com.example.cv_builder;
 
 import javafx.event.ActionEvent;
@@ -6,10 +7,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 public class GenerateController {
 
@@ -25,39 +26,28 @@ public class GenerateController {
     @FXML private Label educationLabel;
     @FXML private ImageView profileImageView;
 
-    public void setCVData(String fullName,
-                          String jobTitle,
-                          String email,
-                          String phone,
-                          String address,
-                          String project,
-                          String skills,
-                          String languages,
-                          String experience,
-                          String education,
-                          String imageUrl) {
+    private int currentId = -1;
+    private final CVDao dao = new CVDao();
 
-        fullNameLabel.setText(fullName);
-        jobTitleLabel.setText(jobTitle);
-
-        emailLabel.setText("Email: " + email);
-        phoneLabel.setText("Phone: " + phone);
-        addressLabel.setText("Address: \n" + address);
-
-        aboutLabel.setText(project);
-        skillsLabel.setText(skills);
-        languagesLabel.setText(languages);
-        experienceLabel.setText(experience);
-        educationLabel.setText(education);
-
-        if (imageUrl != null && !imageUrl.isEmpty()) {
+    // existing setter used by CreateController before — replaced with this single method
+    public void setCVDataWithId(CVData cv) {
+        if (cv == null) return;
+        currentId = cv.getId();
+        fullNameLabel.setText(cv.getFullName());
+        jobTitleLabel.setText(cv.getJobTitle());
+        emailLabel.setText("Email: " + (cv.getEmail() == null ? "" : cv.getEmail()));
+        phoneLabel.setText("Phone: " + (cv.getPhone() == null ? "" : cv.getPhone()));
+        addressLabel.setText("Address:\n" + (cv.getAddress() == null ? "" : cv.getAddress()));
+        aboutLabel.setText(cv.getProjects());
+        skillsLabel.setText(cv.getSkills());
+        languagesLabel.setText(cv.getLanguages());
+        experienceLabel.setText(cv.getExperience());
+        educationLabel.setText(cv.getEducation());
+        if (cv.getImageUrl() != null && !cv.getImageUrl().isEmpty()) {
             try {
-                Image image = new Image(imageUrl);
+                Image image = new Image(cv.getImageUrl());
                 profileImageView.setImage(image);
-            } catch (Exception e) {
-                System.out.println("Failed to load profile image.");
-                e.printStackTrace();
-            }
+            } catch (Exception e) { e.printStackTrace(); }
         }
     }
 
@@ -67,5 +57,47 @@ public class GenerateController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(homeRoot));
         stage.show();
+    }
+
+    @FXML
+    private void onDeleteAction(ActionEvent event) {
+        if (currentId <= 0) return;
+        DBTaskExecutor.run(
+                () -> dao.delete(currentId),
+                deleted -> {
+                    // navigate back to saved list or home on success
+                    javafx.application.Platform.runLater(() -> {
+                        try {
+                            Parent root = FXMLLoader.load(getClass().getResource("saved_cvs.fxml"));
+                            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                            stage.setScene(new Scene(root));
+                            stage.show();
+                        } catch (Exception e) { e.printStackTrace(); }
+                    });
+                },
+                err -> err.printStackTrace()
+        );
+    }
+
+    @FXML
+    private void onUpdateAction(ActionEvent event) {
+        if (currentId <= 0) return;
+        // load the same CV into Create form for editing
+        DBTaskExecutor.run(
+                () -> dao.getById(currentId).orElse(null),
+                cv -> javafx.application.Platform.runLater(() -> {
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("create.fxml"));
+                        Parent root = loader.load();
+                        CreateController ctrl = loader.getController();
+                        ctrl.loadCV(cv);
+                        Stage stage = new Stage();
+                        stage.setScene(new Scene(root));
+                        stage.setTitle("Edit CV");
+                        stage.show();
+                    } catch (Exception e) { e.printStackTrace(); }
+                }),
+                err -> err.printStackTrace()
+        );
     }
 }

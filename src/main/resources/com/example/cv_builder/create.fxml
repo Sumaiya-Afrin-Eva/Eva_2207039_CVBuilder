@@ -150,7 +150,7 @@
 
                 <Pane prefHeight="20.0" prefWidth="200.0" />
 
-                <Button fx:id="generateButton" alignment="CENTER" contentDisplay="CENTER" onAction="#openGenerateCV" text="Generate CV">
+                <Button fx:id="generateButton" alignment="CENTER" contentDisplay="CENTER" onAction="#saveAndOpenGenerate" text="Generate CV">
                     <VBox.margin>
                         <Insets bottom="20.0" left="200.0" right="400.0" top="20.0" />
                     </VBox.margin>
