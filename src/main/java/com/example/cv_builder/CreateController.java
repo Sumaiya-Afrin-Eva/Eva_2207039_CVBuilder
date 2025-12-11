@@ -1,4 +1,3 @@
-// ...existing code...
 package com.example.cv_builder;
 
 import javafx.event.ActionEvent;
@@ -14,7 +13,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import java.io.File;
 
-// ...existing code...
 public class CreateController {
 
     @FXML private TextArea fullNameField;
@@ -33,7 +31,6 @@ public class CreateController {
     private File selectedImageFile;
     private final CVDao dao = new CVDao();
 
-    // track edit mode (id > 0 means update)
     private int editingId = -1;
 
     @FXML
@@ -52,7 +49,6 @@ public class CreateController {
         }
     }
 
-    // Allow external callers to prefill this form for editing
     public void loadCV(CVData cv) {
         if (cv == null) return;
         editingId = cv.getId();
@@ -92,18 +88,17 @@ public class CreateController {
         final boolean isUpdate = editingId > 0;
         if (isUpdate) cv.setId(editingId);
 
-        // run DB operation in background
         DBTaskExecutor.run(
                 () -> {
                     if (isUpdate) {
                         dao.update(cv);
-                        return cv; // still return the model for navigation
+                        return cv; 
                     } else {
                         return dao.insert(cv);
                     }
                 },
                 resultCv -> {
-                    // navigate on FX thread
+                   
                     javafx.application.Platform.runLater(() -> {
                         try {
                             FXMLLoader loader = new FXMLLoader(getClass().getResource("generate.fxml"));
