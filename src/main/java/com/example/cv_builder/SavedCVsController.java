@@ -28,11 +28,8 @@ public class SavedCVsController {
     public void initialize() {
         loadList();
 
-        // ❌ REMOVE double-click auto-open
-        // Now clicking item ONLY selects it — does nothing else.
         listView.setOnMouseClicked(evt -> {
             if (evt.getButton() == MouseButton.PRIMARY) {
-                // Select only — no action
             }
         });
     }
@@ -55,7 +52,6 @@ public class SavedCVsController {
 
             Scene scene = new Scene(scroll, 900, 700);
 
-            // APPLY CSS HERE ✔
             scene.getStylesheets().add(getClass().getResource("create.css").toExternalForm());
 
             Stage stage = new Stage();
@@ -83,7 +79,6 @@ public class SavedCVsController {
 
             Scene scene = new Scene(scroll, 900, 700);
 
-            // APPLY CSS HERE ✔
             scene.getStylesheets().add(getClass().getResource("create.css").toExternalForm());
 
             Stage stage = new Stage();
@@ -95,9 +90,6 @@ public class SavedCVsController {
         } catch (Exception e) { e.printStackTrace(); }
     }
 
-
-
-    // ✔ OPEN SELECTED → go to generate.fxml
     public void onOpenSelected(ActionEvent event) {
         CVData sel = listView.getSelectionModel().getSelectedItem();
         if (sel == null) return;
@@ -132,14 +124,12 @@ public class SavedCVsController {
         CVData sel = listView.getSelectionModel().getSelectedItem();
         if (sel == null) return;
 
-        // Delete from database
         DBTaskExecutor.run(
                 () -> {
                     dao.deleteById(sel.getId());
                     return null;
                 },
                 ok -> {
-                    // Remove from ListView
                     listView.getItems().remove(sel);
                 },
                 err -> err.printStackTrace()
